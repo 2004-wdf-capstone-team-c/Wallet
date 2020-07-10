@@ -9,7 +9,7 @@ const db = require("./db");
 const sessionStore = new SequelizeStore({ db });
 const PORT = process.env.PORT || 8080;
 const app = express();
-// const socketio = require("socket.io");
+const socketio = require("socket.io");
 module.exports = app;
 const helmet = require("helmet");
 
@@ -18,6 +18,11 @@ const helmet = require("helmet");
 if (process.env.NODE_ENV === "test") {
   after("close the session store", () => sessionStore.stopExpiringSessions());
 }
+
+app.use((req, res, next) => {
+  console.log("IN Server");
+  next();
+});
 
 app.use(helmet());
 
@@ -80,7 +85,7 @@ const createApp = () => {
       {
         cookie: {
           maxAge: null,
-          expires: { maxAge: 60 * 2000 }, // one minute timeout
+          expires: { maxAge: 60 * 2000 }, // two minute timeout
           httpOnly: true,
           secure: true,
         },
@@ -128,8 +133,8 @@ const startListening = () => {
   );
 
   // set up our socket control center
-  // const io = socketio(server);
-  // require("./socket")(io);
+  const io = socketio(server);
+  require("./socket")(io);
 };
 
 const syncDb = () => db.sync();

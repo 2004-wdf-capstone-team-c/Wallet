@@ -4,17 +4,14 @@ module.exports = router;
 
 router.get("/", async (req, res, next) => {
   try {
-    console.log("USER", req.user);
-    if (req.user) {
-      const data = await Transaction.findAll({
-        where: {
-          userId: req.user.dataValues.id,
-        },
-      });
-      res.status(200).json(data);
-    } else {
-      res.sendStatus(404);
-    }
+    console.log("IN transAcTIONs");
+    // if (req.user) {
+    const data = await Transaction.findAll();
+    res.status(200).json(data);
+    // }
+    //  else {
+    //   res.sendStatus(404);
+    // }
   } catch (error) {
     next(error);
   }
