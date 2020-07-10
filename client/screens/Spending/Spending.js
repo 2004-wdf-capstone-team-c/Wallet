@@ -17,7 +17,9 @@ export class SpendingScreen extends React.Component {
 
   async fetchTrans() {
     try {
-      const res = await axios.get(`${server}/api/transactions`);
+      const res = await axios.get(
+        "https://pokeapi.co/api/v2/evolution-chain/?limit=20&offset=20"
+      );
       console.log(res.data);
     } catch (error) {
       console.log("ERRORrrrrr", error);
