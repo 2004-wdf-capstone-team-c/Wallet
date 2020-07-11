@@ -5,7 +5,8 @@ import store from "./client/index";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 
-import { Signup, Login, Link, Initial } from "./client/screens";
+import { Signup, Login, Link, Initial, Spending } from "./client/screens";
+import { SingleTransaction } from "./client/screens/Spending";
 // import { Signup } from "./client/screens/OnBoard/Signup";
 // import Initial from "./client/screens/OnBoard/Initial";
 // import Login from "./client/screens/OnBoard/Login";
@@ -18,6 +19,11 @@ export default class App extends Component {
     return (
       <Stack.Navigator>
         <Stack.Screen
+          name="Spending"
+          component={Spending}
+          options={{ title: "Spending" }}
+        />
+        {/* <Stack.Screen
           name="Initial"
           component={Initial}
           options={{
@@ -44,7 +50,7 @@ export default class App extends Component {
           options={{
             title: "Link your bank to Wallet",
           }}
-        />
+        /> */}
       </Stack.Navigator>
     );
   };
