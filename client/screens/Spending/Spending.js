@@ -82,7 +82,7 @@ const data = [
     userId: 1,
   },
   {
-    id: 5,
+    id: 6,
     name: "Google Payroll",
     amount: -500,
     date: "2018-05-11",
@@ -94,7 +94,7 @@ const data = [
     userId: 1,
   },
   {
-    id: 5,
+    id: 7,
     name: "Google Payroll",
     amount: -500,
     date: "2018-05-11",
@@ -106,7 +106,7 @@ const data = [
     userId: 1,
   },
   {
-    id: 5,
+    id: 8,
     name: "Google Payroll",
     amount: -500,
     date: "2018-05-11",
@@ -118,7 +118,7 @@ const data = [
     userId: 1,
   },
   {
-    id: 5,
+    id: 9,
     name: "Google Payroll",
     amount: -500,
     date: "2018-05-11",
@@ -144,7 +144,14 @@ export function SpendingScreen({ navigation }) {
     <Container>
       <Header />
       <Content>
-        <FlatList
+        {data.filter((item) => {
+          return (
+            <View>
+              <Text>{item.name}</Text>
+            </View>
+          );
+        })}
+        {/* <FlatList
           nestedScrollEnabled={true}
           data={data}
           renderItem={({ item }) => (
@@ -165,7 +172,7 @@ export function SpendingScreen({ navigation }) {
               </Right>
             </View>
           )}
-        />
+        /> */}
       </Content>
     </Container>
   );

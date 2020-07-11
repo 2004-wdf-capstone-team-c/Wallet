@@ -6,7 +6,6 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 
 import { Signup, Login, Link, Initial, Spending } from "./client/screens";
-import { SingleTransaction } from "./client/screens/Spending";
 // import { Signup } from "./client/screens/OnBoard/Signup";
 // import Initial from "./client/screens/OnBoard/Initial";
 // import Login from "./client/screens/OnBoard/Login";
