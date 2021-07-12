@@ -1,4 +1,7 @@
 ## Setup
+
+[DEMO](https://www.youtube.com/watch?v=sOMqL8pxLIc)
+
 To run this project, navigate to the directory and run one of the following yarn commands.
 
 - ```cd Finance_Manager```
@@ -7,3 +10,4 @@ To run this project, navigate to the directory and run one of the following yarn
 - ```yarn android``` or ```yarn ios``` or ```yarn web```
 
 [**User Interface Wireframes**](https://github.com/2004-wdf-capstone-team-c/Finance_Manager/blob/master/Wallet_wireframes.pdf)  
+
